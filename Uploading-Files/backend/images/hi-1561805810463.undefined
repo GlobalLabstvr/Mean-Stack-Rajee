@@ -1,0 +1,35 @@
+React Native Navigation Setup page
+
+https://wix.github.io/react-native-navigation/#/docs/Installing?id=_1-add-the-following-in-androidsettingsgradle
+
+React Native Styling Cheat Sheet: https://github.com/vhpoet/react-native-styling-cheat-sheet
+
+Learn all about Flexbox (for CSS, but concepts are the same): https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+Layout with Flexbox in React Native Apps (official docs): https://facebook.github.io/react-native/docs/flexbox.html
+
+Styling React Native Apps (official docs): https://facebook.github.io/react-native/docs/style.html
+
+Dimensions in React Native Apps (official docs): https://facebook.github.io/react-native/docs/height-and-width.html
+
+Animations in React Native Apps (official docs): https://facebook.github.io/react-native/docs/animations.html
+
+React Native Navigation Docs (contains explanations about how to style everything): https://wix.github.io/react-native-navigation/#/
+
+
+KeyboardAvoidingView and ScrollView
+Depending on which device you're using, you might encounter an issue on the SharePlace screen: The input for the place name might not scroll up when typing. Your soft keyboard might overlap it.
+
+You can of course also use KeyboardAvoidingView  here. Actually, adding it should be super simple:
+
+1) Add it to the imports
+
+2) Replace the wrapping <View>  with <KeyboardAvoidingView behavior="padding" style={styles.container}> 
+
+The problem just is the ScrollView . Your content won't scroll up automatically - but you can do that manually. So the input can be made visible.
+
+Once you close the keyboard though, the padding is likely to stick around.
+
+That's because ScrollView  + KeyboardAvoidingView  don't work together very well.
+
+Check the following thread for a discussion on this + possible workarounds: https://github.com/facebook/react-native/issues/10765
